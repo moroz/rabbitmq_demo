@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "ts-node-dev src/app.ts",
+    "build": "tsc -p ."
+  },
   "devDependencies": {
     "@types/amqplib": "^0.5.17",
     "@types/body-parser": "^1.19.0",
@@ -14,6 +18,8 @@
     "amqplib": "^0.6.0",
     "avsc": "^5.5.3",
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-winston": "^4.1.0",
+    "winston": "^3.3.3"
   }
 }
