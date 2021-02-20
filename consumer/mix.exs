@@ -6,7 +6,7 @@ defmodule Consumer.MixProject do
       app: :consumer,
       version: "0.1.0",
       elixir: "~> 1.11",
-      start_permanent: Mix.env() == :prod,
+      start_permanent: true,
       deps: deps()
     ]
   end
@@ -14,6 +14,7 @@ defmodule Consumer.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {Consumer.Application, []},
       extra_applications: [:logger]
     ]
   end
