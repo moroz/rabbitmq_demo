@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  rabbit:
+    hostname: 'rabbit'
+    image: rabbitmq:3.8-management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - "./.rabbit:/var/lib/rabbitmq/mnesia/"
+
+  producer:
+    build: ./producer/
+    volumes:
+      - "./producer:/app"
+    depends_on:
+      - rabbit
+
+    environment:
+      PORT: 3000
+      LOG_LEVEL: info
+
+    ports:
+      - "3000:3000"
+
+  consumer:
+    build: ./consumer/
+    depends_on:
+      - rabbit
+    volumes:
+      - "./consumer:/app"

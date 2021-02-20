@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY package.json yarn.lock /
 
-RUN yarn install
+RUN yarn install --production=false
 
-CMD ts-node-dev app.ts
+CMD yarn start
