@@ -1,18 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
-import winston from "winston";
 import expressWinston from "express-winston";
+import logger from "./logger";
 
 const port = Number(process.env.PORT ?? 3000);
-
-const logger = winston.createLogger({
-  level: process.env.LOG_LEVEL || "info",
-  transports: [new winston.transports.Console()],
-  format: winston.format.combine(
-    winston.format.colorize(),
-    winston.format.simple()
-  )
-});
 
 const app = express();
 

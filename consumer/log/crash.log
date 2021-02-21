@@ -1,0 +1,63 @@
+2021-02-21 13:30:45 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Consumer.PaymentNotificationConsumer:init/1
+    pid: <0.302.0>
+    registered_name: []
+    exception error: {{badmatch,{error,channel_not_ready}},[{'Elixir.Consumer.PaymentNotificationConsumer',init,1,[{file,"lib/payment_notification_consumer.ex"},{line,16}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,417}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,385}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: ['Elixir.Consumer.Supervisor',<0.300.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.301.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 610
+    stack_size: 28
+    reductions: 256
+  neighbours:
+2021-02-21 13:30:45 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Consumer.Supervisor'}
+     Context:    start_error
+     Reason:     {{badmatch,{error,channel_not_ready}},[{'Elixir.Consumer.PaymentNotificationConsumer',init,1,[{file,"lib/payment_notification_consumer.ex"},{line,16}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,417}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,385}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.Consumer.PaymentNotificationConsumer'},{mfargs,{'Elixir.Consumer.PaymentNotificationConsumer',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2021-02-21 13:30:45 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.299.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Consumer.PaymentNotificationConsumer',{{badmatch,{error,channel_not_ready}},[{'Elixir.Consumer.PaymentNotificationConsumer',init,1,[{file,"lib/payment_notification_consumer.ex"},{line,16}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,417}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,385}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}},{'Elixir.Consumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.298.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.300.0>,normal}]
+    links: [<0.298.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 28
+    reductions: 219
+  neighbours:
+2021-02-21 13:32:04 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Consumer.Supervisor'}
+     Context:    start_error
+     Reason:     {{badmatch,{error,channel_not_ready}},[{'Elixir.Consumer.PaymentNotificationConsumer',init,1,[{file,"lib/payment_notification_consumer.ex"},{line,16}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,417}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,385}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.Consumer.PaymentNotificationConsumer'},{mfargs,{'Elixir.Consumer.PaymentNotificationConsumer',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2021-02-21 13:32:04 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.258.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.Consumer.PaymentNotificationConsumer',{{badmatch,{error,channel_not_ready}},[{'Elixir.Consumer.PaymentNotificationConsumer',init,1,[{file,"lib/payment_notification_consumer.ex"},{line,16}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,417}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,385}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}}},{'Elixir.Consumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,226}]}]}
+    ancestors: [<0.257.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.259.0>,normal}]
+    links: [<0.257.0>,<0.44.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 28
+    reductions: 219
+  neighbours:

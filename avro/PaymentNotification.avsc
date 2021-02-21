@@ -1,0 +1,22 @@
+{
+  "type": "record",
+  "name": "PaymentNotification",
+  "fields": [
+    {
+      "name": "order_id",
+      "type": "int"
+    },
+    {
+      "name": "fulfilled_at",
+      "type": "int"
+    },
+    {
+      "name": "payment_method",
+      "type": {
+        "name": "PaymentMethod",
+        "type": "enum",
+        "symbols": ["CASH", "CREDIT_CARD", "WECHAT_PAY", "ALIPAY", "UNION_PAY"]
+      }
+    }
+  ]
+}

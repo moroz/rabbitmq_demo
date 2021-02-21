@@ -1,18 +1,17 @@
-FROM elixir:1.11
+FROM elixir:1.11 AS deps
 
 WORKDIR /app
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install inotify-tools locales
-
-RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
-    dpkg-reconfigure --frontend=noninteractive locales && \
-    update-locale LANG=en_US.UTF-8
-
-ENV LANG en_US.UTF-8
+ENV RABBITMQ_HOST rabbit
 
 RUN mix local.hex --force
 
 RUN mix local.rebar --force
 
-CMD mix run --no-halt
+COPY mix.exs /app/
+
+RUN mix do deps.get, deps.compile
+
+CMD mix consume
+
 

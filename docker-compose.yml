@@ -20,6 +20,7 @@ services:
     environment:
       PORT: 3000
       LOG_LEVEL: info
+      RABBITMQ_HOST: rabbit
 
     ports:
       - "3000:3000"
@@ -30,3 +31,10 @@ services:
       - rabbit
     volumes:
       - "./consumer:/app"
+      - "consumer_build:/app/_build"
+
+    environment:
+      RABBITMQ_HOST: rabbit
+
+volumes:
+  consumer_build:
