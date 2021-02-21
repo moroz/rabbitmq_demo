@@ -61,3 +61,61 @@
     stack_size: 28
     reductions: 219
   neighbours:
+2021-02-21 14:09:05 =ERROR REPORT====
+** Generic server <0.261.0> terminating 
+** Last message in was {basic_deliver,<<178,33,132,162,147,131,12,4>>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-J_1_NUlB6l_XZ6MB4XU0NQ">>,content_encoding => undefined,content_type => undefined,correlation_id => undefined,delivery_tag => 1,exchange => <<>>,expiration => undefined,headers => [],message_id => undefined,persistent => false,priority => undefined,redelivered => false,reply_to => undefined,routing_key => <<"payment_notifications">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.264.0>},custom_consumer => {'Elixir.AMQP.SelectiveConsumer',<0.252.0>},pid => <0.275.0>}
+** Reason for termination ==
+** {{noproc,{'Elixir.GenServer',call,['Elixir.Avrora.Storage.Memory',{get,<<"PaymentNotification">>},5000]}},[{'Elixir.GenServer',call,3,[{file,"lib/gen_server.ex"},{line,1017}]},{'Elixir.Avrora.Storage.Memory',get,2,[{file,"lib/avrora/storage/memory.ex"},{line,97}]},{'Elixir.Avrora.Resolver',resolve,1,[{file,"lib/avrora/resolver.ex"},{line,79}]},{'Elixir.Avrora.Codec.Plain',decode,2,[{file,"lib/avrora/codec/plain.ex"},{line,25}]},{'Elixir.Consumer.PaymentNotificationConsumer',consume,4,[{file,"lib/payment_notification_consumer.ex"},{line,51}]},{'Elixir.Consumer.PaymentNotificationConsumer',handle_info,2,[{file,"lib/payment_notification_consumer.ex"},{line,45}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,689}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,765}]}]}
+2021-02-21 14:09:05 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Consumer.PaymentNotificationConsumer:init/1
+    pid: <0.261.0>
+    registered_name: []
+    exception exit: {{noproc,{'Elixir.GenServer',call,['Elixir.Avrora.Storage.Memory',{get,<<"PaymentNotification">>},5000]}},[{'Elixir.GenServer',call,3,[{file,"lib/gen_server.ex"},{line,1017}]},{'Elixir.Avrora.Storage.Memory',get,2,[{file,"lib/avrora/storage/memory.ex"},{line,97}]},{'Elixir.Avrora.Resolver',resolve,1,[{file,"lib/avrora/resolver.ex"},{line,79}]},{'Elixir.Avrora.Codec.Plain',decode,2,[{file,"lib/avrora/codec/plain.ex"},{line,25}]},{'Elixir.Consumer.PaymentNotificationConsumer',consume,4,[{file,"lib/payment_notification_consumer.ex"},{line,51}]},{'Elixir.Consumer.PaymentNotificationConsumer',handle_info,2,[{file,"lib/payment_notification_consumer.ex"},{line,45}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,689}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,765}]}]}
+    ancestors: ['Elixir.Consumer.Supervisor',<0.259.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.260.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: false
+    status: running
+    heap_size: 2586
+    stack_size: 28
+    reductions: 10418
+  neighbours:
+2021-02-21 14:09:05 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Consumer.Supervisor'}
+     Context:    child_terminated
+     Reason:     {noproc,{'Elixir.GenServer',call,['Elixir.Avrora.Storage.Memory',{get,<<"PaymentNotification">>},5000]}}
+     Offender:   [{pid,<0.261.0>},{id,'Elixir.Consumer.PaymentNotificationConsumer'},{mfargs,{'Elixir.Consumer.PaymentNotificationConsumer',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2021-02-21 14:10:26 =ERROR REPORT====
+** Generic server <0.302.0> terminating 
+** Last message in was {basic_deliver,<<178,33,132,162,147,131,12,4>>,#{app_id => undefined,cluster_id => undefined,consumer_tag => <<"amq.ctag-bQVGCpBUxVUK7ro8pQnYvQ">>,content_encoding => undefined,content_type => undefined,correlation_id => undefined,delivery_tag => 1,exchange => <<>>,expiration => undefined,headers => [],message_id => undefined,persistent => false,priority => undefined,redelivered => true,reply_to => undefined,routing_key => <<"payment_notifications">>,timestamp => undefined,type => undefined,user_id => undefined}}
+** When Server state == #{'__struct__' => 'Elixir.AMQP.Channel',conn => #{'__struct__' => 'Elixir.AMQP.Connection',pid => <0.305.0>},custom_consumer => {'Elixir.AMQP.SelectiveConsumer',<0.293.0>},pid => <0.316.0>}
+** Reason for termination ==
+** {{noproc,{'Elixir.GenServer',call,['Elixir.Avrora.Storage.Memory',{get,<<"PaymentNotification">>},5000]}},[{'Elixir.GenServer',call,3,[{file,"lib/gen_server.ex"},{line,1017}]},{'Elixir.Avrora.Storage.Memory',get,2,[{file,"lib/avrora/storage/memory.ex"},{line,97}]},{'Elixir.Avrora.Resolver',resolve,1,[{file,"lib/avrora/resolver.ex"},{line,79}]},{'Elixir.Avrora.Codec.Plain',decode,2,[{file,"lib/avrora/codec/plain.ex"},{line,25}]},{'Elixir.Consumer.PaymentNotificationConsumer',consume,4,[{file,"lib/payment_notification_consumer.ex"},{line,51}]},{'Elixir.Consumer.PaymentNotificationConsumer',handle_info,2,[{file,"lib/payment_notification_consumer.ex"},{line,45}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,689}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,765}]}]}
+2021-02-21 14:10:26 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Consumer.PaymentNotificationConsumer:init/1
+    pid: <0.302.0>
+    registered_name: []
+    exception exit: {{noproc,{'Elixir.GenServer',call,['Elixir.Avrora.Storage.Memory',{get,<<"PaymentNotification">>},5000]}},[{'Elixir.GenServer',call,3,[{file,"lib/gen_server.ex"},{line,1017}]},{'Elixir.Avrora.Storage.Memory',get,2,[{file,"lib/avrora/storage/memory.ex"},{line,97}]},{'Elixir.Avrora.Resolver',resolve,1,[{file,"lib/avrora/resolver.ex"},{line,79}]},{'Elixir.Avrora.Codec.Plain',decode,2,[{file,"lib/avrora/codec/plain.ex"},{line,25}]},{'Elixir.Consumer.PaymentNotificationConsumer',consume,4,[{file,"lib/payment_notification_consumer.ex"},{line,51}]},{'Elixir.Consumer.PaymentNotificationConsumer',handle_info,2,[{file,"lib/payment_notification_consumer.ex"},{line,45}]},{gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,689}]},{gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,765}]}]}
+    ancestors: ['Elixir.Consumer.Supervisor',<0.300.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.301.0>]
+    dictionary: [{gen_server_call_timeout,70000}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 28
+    reductions: 10358
+  neighbours:
+2021-02-21 14:10:26 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Consumer.Supervisor'}
+     Context:    child_terminated
+     Reason:     {noproc,{'Elixir.GenServer',call,['Elixir.Avrora.Storage.Memory',{get,<<"PaymentNotification">>},5000]}}
+     Offender:   [{pid,<0.302.0>},{id,'Elixir.Consumer.PaymentNotificationConsumer'},{mfargs,{'Elixir.Consumer.PaymentNotificationConsumer',start_link,[[]]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+

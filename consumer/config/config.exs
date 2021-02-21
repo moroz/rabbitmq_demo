@@ -22,4 +22,5 @@ default_schema_path = Path.expand("../avro")
 config :avrora,
   schemas_path: System.get_env("AVRO_SCHEMA_DIR", default_schema_path),
   registry_schemas_autoreg: true,
-  convert_null_values: true
+  convert_null_values: true,
+  names_cache_ttl: :timer.minutes(60)

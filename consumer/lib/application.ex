@@ -5,6 +5,7 @@ defmodule Consumer.Application do
 
   def start(_type, _args) do
     children = [
+      Avrora,
       Consumer.PaymentNotificationConsumer
     ]
 

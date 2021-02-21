@@ -1,7 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
 import expressWinston from "express-winston";
-import logger from "./logger";
+import logger from "./utils/logger";
+import Router from "./router";
+import connect from "./connection/amqpConnector";
 
 const port = Number(process.env.PORT ?? 3000);
 
@@ -13,7 +15,10 @@ app.use(
     winstonInstance: logger
   })
 );
+app.use(Router);
 
-app.listen(port, "0.0.0.0", () => {
-  logger.info(`Producer listening on port ${port}...`);
+connect().then(() => {
+  app.listen(port, "0.0.0.0", () => {
+    logger.info(`Producer listening on port ${port}...`);
+  });
 });
